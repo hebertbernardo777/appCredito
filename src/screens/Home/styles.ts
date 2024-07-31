@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import { Platform,StatusBar } from "react-native";
+import { Image } from 'expo-image';
 
 const statusBarHeight = Platform.OS === 'android' ? StatusBar.currentHeight : 0;
 
@@ -20,6 +21,7 @@ export const ImageContainer = styled.View`
 `
 
 export const NameUser = styled.Text`
+    
     text-align: center;
 
     color: ${({ theme }) => theme.COLORS.WHITE};
@@ -29,6 +31,5 @@ export const NameUser = styled.Text`
 `
 
 export const UserView = styled.View`
-    flex-direction: row;
 
 `

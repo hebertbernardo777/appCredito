@@ -1,5 +1,6 @@
 import React, { useState,createContext } from 'react';
 import { api } from '../services';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 
 
@@ -43,7 +44,13 @@ function AuthProvider({ children }:any){
 
 
     function Logout(){
-        setUser(null)
+        try {
+            GoogleSignin.signOut()
+            setUser(null)
+            
+        } catch (error) {
+            console.log(error)
+        }
     }
 
 return(

@@ -3,6 +3,7 @@ import { useContext, useEffect } from "react"
 import { Header } from "../../components/Header"
 import { Container, ImageContainer, NameUser, SafeArea, UserView } from "./styles"
 import { HighLight } from "../../components/HighLight"
+import { Image } from 'expo-image';
 
 import Banner1 from '../../assets/banner1.png'
 import Banner2 from '../../assets/banner2.png'
@@ -18,7 +19,7 @@ import Animated, {
     Easing,
   } from 'react-native-reanimated';
 import { AuthContext } from "../../context/auth.context"
-import { View } from "react-native"
+import { ScrollView, View } from "react-native"
 import { LogOutButton } from "../../components/LogOutButton"
   
 
@@ -26,8 +27,6 @@ import { LogOutButton } from "../../components/LogOutButton"
 export default function Home(){
 
     const user = useContext(AuthContext);
-    console.log("API_KEY")
-    console.log(process.env.TZ)
    
     const scale1 = useSharedValue(0.1);
     const scale2 = useSharedValue(0.1);
@@ -109,14 +108,19 @@ export default function Home(){
                 <Header />
                 <HighLight title="Venda Mais" subtitle="Rápido, fácil e seguro!" />
 
-                
-                <View>
-                  <NameUser> Bem vindo,</NameUser>
+                <UserView>
+
+                  <NameUser>Bem vindo,</NameUser>
                   <NameUser>{user?.user?.NOMEUSU.toUpperCase()}</NameUser>
-                  <LogOutButton onPress={ () => user?.Logout}/>
-                </View>
+
+                </UserView>
+                <ScrollView 
+                  style={{marginBottom:60}}
+                  showsVerticalScrollIndicator={false}
+                >
 
                 
+
                 <ImageContainer>
                     
                     <Animated.Image  source={Banner1} style={[{height: 200,width: 200},animatedStyle1]}/>
@@ -125,6 +129,7 @@ export default function Home(){
                     
                 </ImageContainer>
 
+                </ScrollView>
             
 
             </Container>

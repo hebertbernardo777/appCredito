@@ -1,5 +1,5 @@
 import React,{ useEffect, useState } from 'react'
-import { Text } from 'react-native'
+import { ScrollView, Text } from 'react-native'
 
 import { Container,SafeArea } from './styles'
 
@@ -71,42 +71,48 @@ export default function Order(){
                     onChangeText={ (txt) => handleChangeValue(txt)}
                 />
             
+                <ScrollView
+                    style={{marginBottom: 60}}
+                    showsVerticalScrollIndicator={false}
+                >
 
-                <Option 
-                    checked={selected === 12} 
-                    title='Opcao de Credito 12x ' 
-                    valor={Number(valor)} 
-                    parcelas={12} 
-                    onPress={ () => setSelected(12)} 
-                />
+                    <Option 
+                        checked={selected === 12} 
+                        title='Opcao de Credito 12x ' 
+                        valor={Number(valor)} 
+                        parcelas={12} 
+                        onPress={ () => setSelected(12)} 
+                    />
 
-                <Option 
-                    checked={selected === 18} 
-                    title='Opcao de Credito 18x ' 
-                    valor={Number(valor)} 
-                    parcelas={18} 
-                    onPress={ () => setSelected(18)} 
-                />
+                    <Option 
+                        checked={selected === 18} 
+                        title='Opcao de Credito 18x ' 
+                        valor={Number(valor)} 
+                        parcelas={18} 
+                        onPress={ () => setSelected(18)} 
+                    />
 
-                <Option 
-                    checked={selected === 21} 
-                    title='Opcao de Credito 21x ' 
-                    valor={Number(valor)} 
-                    parcelas={21} 
-                    onPress={ () => setSelected(21)} 
-                />
-
-                <ResumeOrder 
-                    title={ (calcularParcela(Number(valor),TAXAJUROS,selected)*selected).toLocaleString('pt-BR', {style: 'currency',currency: 'BRL'})}
-                />
+                    <Option 
+                        checked={selected === 21} 
+                        title='Opcao de Credito 21x ' 
+                        valor={Number(valor)} 
+                        parcelas={21} 
+                        onPress={ () => setSelected(21)} 
+                    />
 
                 
-                <Button 
-                    title='Continuar'
-                    onPress={handleSendOrder}
-                    isLoading={false}
-                />
+                    <ResumeOrder 
+                        title={ (calcularParcela(Number(valor),TAXAJUROS,selected)*selected).toLocaleString('pt-BR', {style: 'currency',currency: 'BRL'})}
+                        />
+
+                    
+                    <Button 
+                        title='Continuar'
+                        onPress={handleSendOrder}
+                        isLoading={false}
+                    />
                 
+                </ScrollView>
 
                 
             </Container>

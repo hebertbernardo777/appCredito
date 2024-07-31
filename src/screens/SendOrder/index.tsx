@@ -1,9 +1,9 @@
 import React, { useCallback, useState } from 'react'
 import { useFocusEffect } from '@react-navigation/native';
 
-import { SafeArea,Container, Title, TypClientView } from './styles'
+import { SafeArea,Container, Title, TypClientView, InputsView } from './styles'
 import * as ImagePicker from 'expo-image-picker';
-import { Image, View } from 'react-native';
+import { Image, KeyboardAvoidingView, ScrollView, View } from 'react-native';
 
 import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
@@ -99,22 +99,30 @@ type OrderParamsProps = RouteProp<OrderParams,'Order'>;
                     onPress={ ()=> handleChangeTypeClient('CNPJ')}
                 />
             </TypClientView>
+            
 
+        <ScrollView style={{marginBottom:60}}>
+        <InputsView>
+        
             <Input 
                 style={{marginTop: 10}}
                 error={false} 
-                placeholder='Digite CPF do cliente.'
-            />
+                placeholder='Digite CPF ou CNPJ do cliente somente numeros sem pontuacao .'
+                keyboardType='numeric'
+                />
 
             <Input 
                 error={false} 
                 placeholder='Digite o nome do cliente.'
+                
             />
 
             <Input 
                 error={false} 
                 placeholder='Digite o Nro. da identidate "RG".'
+               
             />
+            
 
             <Button 
                 isLoading={false} title="Documento de Identificação" onPress={pickImage} />
@@ -126,7 +134,10 @@ type OrderParamsProps = RouteProp<OrderParams,'Order'>;
                 title='Enviar Pedido'
                 isLoading={false}
             />
+            </InputsView>
 
+            </ScrollView>
+            
             </Container>
         </SafeArea>
     )

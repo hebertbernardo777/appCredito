@@ -4,7 +4,7 @@ import { Platform,StatusBar } from "react-native";
 const statusBarHeight = Platform.OS === 'android' ? StatusBar.currentHeight : 0;
 
 
-export const SafeArea = styled.SafeAreaView`
+export const SafeArea = styled.View`
     flex: 1;
     background-color: ${({ theme }) => theme.COLORS.BLUE_700};
     padding-top: ${statusBarHeight}px;
@@ -18,6 +18,10 @@ export const Container = styled.View`
     gap: 10px;
 `
 
+export const InputsView = styled.View`
+    padding: 16px;
+    gap: 10px;
+`
 export const Title = styled.Text`
     font-size: ${({ theme}) => theme.FONT_SIZE.MD}px;
     font-family: ${({ theme}) => theme.FONT_FAMILY.BOLD};
