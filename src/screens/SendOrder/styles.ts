@@ -25,3 +25,7 @@ export const Title = styled.Text`
 
     text-align: center;
 `
+export const TypClientView = styled.View`
+    flex-direction: row;
+    justify-content: space-around;
+`

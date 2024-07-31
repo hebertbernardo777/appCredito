@@ -1,7 +1,7 @@
-import { useEffect } from "react"
+import { useContext, useEffect } from "react"
 
 import { Header } from "../../components/Header"
-import { Container, ImageContainer, NameUser, SafeArea } from "./styles"
+import { Container, ImageContainer, NameUser, SafeArea, UserView } from "./styles"
 import { HighLight } from "../../components/HighLight"
 
 import Banner1 from '../../assets/banner1.png'
@@ -17,13 +17,17 @@ import Animated, {
     withRepeat,
     Easing,
   } from 'react-native-reanimated';
-
+import { AuthContext } from "../../context/auth.context"
+import { View } from "react-native"
+import { LogOutButton } from "../../components/LogOutButton"
   
 
 
 export default function Home(){
 
-    
+    const user = useContext(AuthContext);
+    console.log("API_KEY")
+    console.log(process.env.TZ)
    
     const scale1 = useSharedValue(0.1);
     const scale2 = useSharedValue(0.1);
@@ -105,7 +109,14 @@ export default function Home(){
                 <Header />
                 <HighLight title="Venda Mais" subtitle="Rápido, fácil e seguro!" />
 
-                <NameUser> Bem vindo, Hebert </NameUser>
+                
+                <View>
+                  <NameUser> Bem vindo,</NameUser>
+                  <NameUser>{user?.user?.NOMEUSU.toUpperCase()}</NameUser>
+                  <LogOutButton onPress={ () => user?.Logout}/>
+                </View>
+
+                
                 <ImageContainer>
                     
                     <Animated.Image  source={Banner1} style={[{height: 200,width: 200},animatedStyle1]}/>

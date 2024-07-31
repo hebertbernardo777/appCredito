@@ -1,0 +1,11 @@
+
+[] Criar login Social 
+[] Restringir login social com base em lista de email`s cadastrados na empresa
+[] Crir componente de escolha de CPF e CNPJ
+[] Enviar fotos via requisicao para o backEnd
+[] Criar botao na HOME com icone do whatsapp redirecionando para algum nro de atendimento
+[] Criar um link para homepage de suporte venda + 
+[] utilizar variaveis de ambiente para conexoes 
+[] Compilar e disponibilizar nas lojas APPLE e GOOGLE
+[] nao permitir valores 0 e negativos ou qualquer outro que nao for numero
+[] vendamaiscred.com.br

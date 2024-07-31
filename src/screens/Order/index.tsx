@@ -15,7 +15,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { StackParamsList } from '../../routes/app.routes'
 
 
-import { TAXAJUROS, calcularParcela } from '../../utils'
+import { TAXAJUROS, calcularParcela } from '../../utils/calculoJuros'
 
 
 

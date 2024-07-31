@@ -5,7 +5,7 @@ import { Canvas, Skia,Path, Circle, BlurMask } from '@shopify/react-native-skia'
 import Animated,{ useSharedValue,withTiming,BounceIn,BounceOut } from 'react-native-reanimated';
 import { CardView, Container,RowView,Subtitle,Title, ValueText } from './styles';
 import { THEME } from '../../theme';
-import { TAXAJUROS, calcularParcela } from '../../utils';
+import { TAXAJUROS, calcularParcela } from '../../utils/calculoJuros';
 
 type Props = TouchableOpacityProps & {
   checked: boolean;

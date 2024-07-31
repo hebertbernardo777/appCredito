@@ -20,7 +20,8 @@
       "backgroundColor": "#00175a"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "br.com.maispvc.vendamaiscred"
     },
     "android": {
       "adaptiveIcon": {
@@ -28,10 +29,12 @@
         "backgroundColor": "#00175a"
       },
       "permissions": [
-        "CAMERA",
-        "READ_EXTERNAL_STORAGE",
-        "WRITE_EXTERNAL_STORAGE"
-      ]
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "br.com.maispvc.vendamaiscred"
     },
     "web": {
       "favicon": "./assets/favicon.png"

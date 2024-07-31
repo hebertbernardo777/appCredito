@@ -17,8 +17,15 @@ export const Title = styled.Text`
 `
 
 export const Slogan = styled.Text`
-    color: ${({ theme }) => THEME.COLORS.GREEN_300};
+    color: ${({ theme }) => THEME.COLORS.GRAY_100};
     font-size: ${({ theme }) => THEME.FONT_SIZE.MD}px;
     font-family: ${({ theme }) => THEME.FONT_FAMILY.REGULAR};
     text-align: center;
+`
+
+export const TitleView = styled.View`
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
 `

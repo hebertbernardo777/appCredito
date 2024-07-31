@@ -4,8 +4,8 @@
   "main": "expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web"
   },
   "dependencies": {
@@ -15,14 +15,15 @@
     "@react-navigation/stack": "^6.3.29",
     "@shopify/react-native-skia": "1.2.3",
     "axios": "^1.7.2",
-    "expo": "~51.0.17",
+    "expo": "~51.0.24",
     "expo-font": "~12.0.7",
     "expo-image-picker": "~15.0.7",
     "expo-status-bar": "~1.12.1",
+    "expo-system-ui": "~3.0.7",
     "phosphor-react-native": "^2.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-native": "0.74.2",
+    "react-native": "0.74.3",
     "react-native-gesture-handler": "~2.16.1",
     "react-native-reanimated": "~3.10.1",
     "react-native-svg": "15.2.0",

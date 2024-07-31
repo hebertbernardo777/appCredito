@@ -19,12 +19,16 @@ export const ImageContainer = styled.View`
     align-items: center;
 `
 
-
 export const NameUser = styled.Text`
     text-align: center;
 
     color: ${({ theme }) => theme.COLORS.WHITE};
     font-size: ${({ theme }) => theme.FONT_SIZE.XL}px;
     font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
+
+`
+
+export const UserView = styled.View`
+    flex-direction: row;
 
 `

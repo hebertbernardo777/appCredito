@@ -6,9 +6,10 @@ import { AuthContext } from "../context/auth.context";
 function Routes() {
 
     const authContext = useContext(AuthContext);
-
+    console.log(authContext?.signed)
+    console.log('user')
     return (
-        authContext?.signed ? <AppRoutes/> : <AppRoutes/>
+        authContext?.signed ? <AppRoutes/> : <AuthRoutes/>
    );
 
 }

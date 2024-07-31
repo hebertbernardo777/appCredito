@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react'
 import { useFocusEffect } from '@react-navigation/native';
 
-import { SafeArea,Container, Title } from './styles'
+import { SafeArea,Container, Title, TypClientView } from './styles'
 import * as ImagePicker from 'expo-image-picker';
 import { Image, View } from 'react-native';
 
@@ -11,6 +11,7 @@ import { Header } from '../../components/Header'
 import { HighLight } from '../../components/HighLight'
 
 import { useRoute,RouteProp } from "@react-navigation/native";
+import { Radius } from '../../components/Radius';
 
 
 
@@ -21,6 +22,7 @@ export function SendOrder(){
     const [vlrMaquina,setVlrMaquina] = useState(0);
     const [qtdParcela,setQtdParcela] = useState(0);
     const [vlrParcela,setVlrParcela] = useState(0);
+    const [typeClient,setTypeClient] = useState<string | null>(null);
 
 
 type OrderParams = {
@@ -62,6 +64,9 @@ type OrderParamsProps = RouteProp<OrderParams,'Order'>;
         }
       };
 
+    function handleChangeTypeClient(tipo:string){
+        setTypeClient(tipo);
+    }
     
     return(
         <SafeArea>
@@ -82,8 +87,19 @@ type OrderParamsProps = RouteProp<OrderParams,'Order'>;
 
            <Title>Valor da parcela a pagar: {vlrParcela.toLocaleString('pt-BR', {style: 'currency',currency: 'BRL'})}</Title>
 
+            <TypClientView>
+                <Radius 
+                    title='CPF' 
+                    checked={typeClient === 'CPF'}
+                    onPress={ ()=> handleChangeTypeClient('CPF')}
+                />
+                <Radius 
+                    title='CNPJ' 
+                    checked={typeClient === 'CNPJ'}
+                    onPress={ ()=> handleChangeTypeClient('CNPJ')}
+                />
+            </TypClientView>
 
-            
             <Input 
                 style={{marginTop: 10}}
                 error={false} 

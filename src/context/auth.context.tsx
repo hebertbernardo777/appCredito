@@ -30,21 +30,15 @@ function AuthProvider({ children }:any){
 
 
     async function signIn(nome:string,senha:string){
+        const data:UserProps = {
+            CODUSU: 1,
+            CODVEND: 1,
+            NOMEUSU: nome,
+            PASSWORD: senha,
+            TOKEN: ''
+        }
 
-        try {
-            const response = await api.post('/session',{ user:nome,password:senha });
-            console.log('tenta buscar dados do servidor!')
-            const data:UserProps = response.data;
-            console.log('data axios '+ data.CODVEND)
-            if(data?.CODUSU && data?.CODVEND){
-                setUser(data);
-                api.defaults.headers.common = {'Authorization': `Bearer ${data.TOKEN}`}
-            }else {
-                throw new Error('Dados de usuário incorretos!')
-            }   
-        } catch(e){
-            alert(`Não foi possivel conectar com o servidor! ${e}`);
-        } 
+        setUser(data)
     }
 
 
