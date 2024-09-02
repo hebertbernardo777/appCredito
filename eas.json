@@ -1,0 +1,18 @@
+{
+  "cli": {
+    "version": ">= 10.2.2"
+  },
+  "build": {
+    "preview": {
+      "android": {
+        "buildType": "apk"
+      },"env": {
+        "NOMEPACOTEGOOGLEAPI": "br.com.maispvc.vendamaiscred",
+        "ANDROID_CLIENT_ID": "789383313602-rci5m5i5bphc8npip83vv3i0eaqqbnjl.apps.googleusercontent.com",
+        "IOS_CLIENT_ID": "789383313602-4a1qv0gcii6lp3sn7b5cdl3ketep8522.apps.googleusercontent.com",
+        "WEB_CLIENT_ID": "789383313602-bq978j1lchnk9jkuknjpqfp05th4d8a4.apps.googleusercontent.com"
+      },
+      "distribution": "internal"
+    }
+  }
+}
